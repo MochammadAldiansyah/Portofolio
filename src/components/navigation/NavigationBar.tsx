@@ -51,30 +51,47 @@ export const NavigationBar: React.FC = () => {
       if (isManualClickRef.current) return;
 
       const scrollPosition = window.scrollY + 240;
+      const nearTop = window.scrollY < 120;
       const isAtBottom =
+        !nearTop &&
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+
+      // At the very top, always highlight the first section regardless of
+      // layout/lazy-load timing — prevents the "contact" flicker on first load.
+      if (nearTop) {
+        setActiveSection(navItems[0].id);
+        return;
+      }
 
       if (isAtBottom) {
         setActiveSection('contact');
         return;
       }
 
+      let matched: string | null = null;
       for (let i = navItems.length - 1; i >= 0; i--) {
         const item = navItems[i];
         const el = document.getElementById(item.id);
         if (el) {
           const top = el.offsetTop;
           if (scrollPosition >= top) {
-            setActiveSection(item.id);
+            matched = item.id;
             break;
           }
         }
       }
+      if (matched) setActiveSection(matched);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Defer the first run until layout has settled (fonts/lazy sections mounted).
+    const raf = requestAnimationFrame(handleScroll);
+    const t = setTimeout(handleScroll, 400);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(t);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleNavClick = (id: string) => {
