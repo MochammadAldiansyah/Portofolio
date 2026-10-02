@@ -4,8 +4,7 @@ import {
   ArrowUpRight,
   ExternalLink,
   Lock,
-  Layers,
-  Smartphone
+  Layers
 } from 'lucide-react';
 import type { Project } from '../../types/portfolio';
 import { ProjectPreviewPlaceholder } from './ProjectPreviewPlaceholder';
@@ -14,6 +13,7 @@ import { AnimatedOceanSlideBackground } from './AnimatedOceanSlideBackground';
 interface FlagshipSlideCardProps {
   project: Project;
   index: number;
+  total: number;
   yMotion?: any;
   opacityMotion?: any;
   depthLevel?: 1 | 2 | 3;
@@ -23,6 +23,7 @@ interface FlagshipSlideCardProps {
 export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
   project,
   index,
+  total,
   yMotion = '0%',
   opacityMotion = 1,
   depthLevel = (index + 1) as 1 | 2 | 3,
@@ -42,7 +43,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-20 sm:pt-24 px-6 sm:px-12 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#fde047] text-[#0f172a] text-xs font-mono font-black border-2 border-[#0f172a] shadow-[3px_3px_0px_#0f172a]">
-            <span>0{index + 1} // {project.category === 'fullstack' ? 'FULL-STACK WEB' : 'MOBILE FLUTTER'}</span>
+            <span>0{index + 1} // FULL-STACK WEB</span>
           </div>
 
           <span className="text-xs font-mono font-bold text-[#0f172a] bg-[#fffdf5]/90 px-3 py-1 rounded-lg border border-[#0f172a]/30 hidden sm:inline-block">
@@ -51,7 +52,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
         </div>
 
         <div className="hidden sm:block text-xs font-mono font-black text-[#0f172a] px-3.5 py-1.5 rounded-xl bg-[#fffdf5] border-2 border-[#0f172a] shadow-[3px_3px_0px_#0f172a]">
-          FLAGSHIP {index + 1} / 3
+          FLAGSHIP {index + 1} / {total}
         </div>
       </div>
 
@@ -133,15 +134,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               </button>
 
               {/* demo or app status */}
-              {project.isMobileApp ? (
-                <div
-                  className="flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-[#e0f2fe] text-[#0369a1] text-[11px] sm:text-xs font-mono font-bold border-2 border-[#0284c7]/50 cursor-not-allowed opacity-90"
-                  title={project.demoStatusLabel || 'Aplikasi Mobile Native'}
-                >
-                  <Smartphone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0284c7]" />
-                  <span>Mobile Native</span>
-                </div>
-              ) : project.demoUrl ? (
+              {project.demoUrl && (
                 <a
                   href={project.demoUrl}
                   target="_blank"
@@ -151,7 +144,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                   <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   <span>Live Demo</span>
                 </a>
-              ) : null}
+              )}
 
               {/* repository status */}
               {project.isPrivateRepo ? (
@@ -185,7 +178,6 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
           >
             <ProjectPreviewPlaceholder
               project={project}
-              isMobileFrame={project.category === 'mobile'}
               className="aspect-[16/10] w-full shadow-[8px_8px_0px_#0f172a] transition-all duration-300 group-hover:scale-[1.01] group-hover:shadow-[10px_10px_0px_#0f172a]"
             />
 

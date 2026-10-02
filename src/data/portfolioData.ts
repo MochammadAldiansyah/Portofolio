@@ -2,16 +2,16 @@ import type { ProfileData, Project, TechItem, ExperienceItem } from '../types/po
 
 export const profileData: ProfileData = {
   name: 'Mochammad Aldiansyah',
-  tagline: 'Full-Stack & Mobile Developer',
+  tagline: 'Full-Stack Web Developer',
   education: 'Rekayasa Perangkat Lunak (RPL) - SMK Antartika 1 Sidoarjo',
   status: 'Available for Engineering Roles & Projects',
-  bio: 'Informatics engineering undergraduate focused on building end-to-end web platforms and mobile applications with resilient architecture, clean code, and Linux-driven workflows.',
+  bio: 'Siswa Rekayasa Perangkat Lunak (RPL) di SMK Antartika 1 Sidoarjo dengan fokus pada pengembangan aplikasi web modern. Terbiasa membangun sistem backend dengan Laravel dan MySQL serta merancang antarmuka responsif dan interaktif.',
   experienceStart: 'Active Developer',
   avatarUrl: '/aldi.jpeg',
   interests: [
     'Web Architecture',
-    'Mobile Systems',
-    'Linux Ecosystem',
+    'Backend Development',
+    'Frontend Interfaces',
     'Software Reliability',
     'Reactive Interfaces'
   ],
@@ -43,7 +43,7 @@ export const techStackData: TechItem[] = [
     color: '#eab308',
     roleTag: 'Scripting Core',
     usageContext: 'Core web scripting, DOM events, and interactive front-end behavior',
-    projectLinks: ['rpl-archive', 'periksa-id', 'journal']
+    projectLinks: ['rpl-archive', 'noekarta']
   },
   {
     name: 'Tailwind CSS v4',
@@ -63,7 +63,7 @@ export const techStackData: TechItem[] = [
     color: '#ef4444',
     roleTag: 'Server-Side Template',
     usageContext: 'Server-rendered templating integrated tightly with Laravel',
-    projectLinks: ['periksa-id', 'journal', 'pageturn', 'noekarta']
+    projectLinks: ['noekarta', 'bioguard']
   },
 
   // backend engine layer
@@ -75,7 +75,7 @@ export const techStackData: TechItem[] = [
     color: '#ef4444',
     roleTag: 'MVC & REST Engine',
     usageContext: 'Robust MVC applications, REST APIs, authentication, RBAC, and transactions',
-    projectLinks: ['periksa-id', 'journal', 'pageturn', 'bioguard', 'noekarta']
+    projectLinks: ['noekarta', 'bioguard']
   },
   {
     name: 'PHP',
@@ -85,7 +85,7 @@ export const techStackData: TechItem[] = [
     color: '#777bb4',
     roleTag: 'Server Language',
     usageContext: 'Primary server-side language across all Laravel-based web platforms',
-    projectLinks: ['periksa-id', 'journal', 'pageturn', 'bioguard', 'noekarta']
+    projectLinks: ['noekarta', 'bioguard']
   },
   {
     name: 'Node.js',
@@ -107,7 +107,7 @@ export const techStackData: TechItem[] = [
     color: '#0284c7',
     roleTag: 'Relational DB',
     usageContext: 'Relational data modeling, migrations, ACID transactions, and optimized indexing',
-    projectLinks: ['periksa-id', 'journal', 'pageturn', 'noekarta']
+    projectLinks: ['noekarta', 'bioguard']
   },
   {
     name: 'Eloquent ORM',
@@ -117,39 +117,7 @@ export const techStackData: TechItem[] = [
     color: '#ef4444',
     roleTag: 'Laravel ORM',
     usageContext: 'Expressive relationships, query building, and migration-driven schema design',
-    projectLinks: ['periksa-id', 'journal', 'pageturn', 'bioguard']
-  },
-
-  // infrastructure and devops layer
-  {
-    name: 'Docker',
-    category: 'tools',
-    layer: 'devops',
-    iconKey: 'docker',
-    color: '#0284c7',
-    roleTag: 'Containerization',
-    usageContext: 'Containerized local environments and consistent project setup',
-    projectLinks: ['bioguard']
-  },
-  {
-    name: 'Git',
-    category: 'tools',
-    layer: 'devops',
-    iconKey: 'git',
-    color: '#f97316',
-    roleTag: 'Version Control',
-    usageContext: 'Version control, feature branching, and repository management',
-    projectLinks: ['periksa-id', 'journal', 'pageturn', 'bioguard', 'rpl-archive', 'noekarta']
-  },
-  {
-    name: 'Vercel',
-    category: 'tools',
-    layer: 'devops',
-    iconKey: 'vercel',
-    color: '#0f172a',
-    roleTag: 'Static Deployment',
-    usageContext: 'Continuous deployment and global CDN delivery for web apps',
-    projectLinks: ['rpl-archive']
+    projectLinks: ['noekarta', 'bioguard']
   }
 ];
 
@@ -194,158 +162,6 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: 'periksa-id',
-    title: 'periksa_id',
-    subtitle: 'Platform Kesehatan Digital: Cari Dokter, Janji Temu & Order Obat',
-    category: 'fullstack',
-    summary: 'Aplikasi layanan kesehatan berbasis web yang menghubungkan pasien dengan dokter: pencarian dokter, penjadwalan janji temu, forum tanya-jawab, hingga pemesanan obat.',
-    description: 'periksa_id adalah platform telemedicine sederhana yang mencakup modul pasien dan admin. Pasien dapat mencari dokter, membuat janji temu, berdiskusi di forum, dan memesan obat; admin mengelola dokter, pesanan, dan konten forum.',
-    architecture: [
-      'Backend Laravel dengan role & permission management (spatie/permission)',
-      'Modul domain: Doctor, JanjiTemu, Medicine, Order, Forum Thread, dan Message',
-      'Manajemen pesanan obat dengan penyimpanan koordinat (lat/long) untuk pengiriman',
-      'Panel admin terpisah untuk kelola dokter, pesanan, dan forum',
-      'Sistem autentikasi dengan profil dokter (alamat & lulusan)'
-    ],
-    stack: [
-      'Laravel',
-      'Blade',
-      'PHP',
-      'JavaScript',
-      'MySQL',
-      'RBAC (spatie/permission)'
-    ],
-    highlights: [
-      'Alur lengkap pasien: cari dokter → janji temu → forum → order obat',
-      'Manajemen peran Admin / Dokter / Pasien',
-      'Integrasi lokasi untuk pengiriman pesanan obat'
-    ],
-    challenges: 'Merancang satu basis kode yang menampung banyak peran (admin, dokter, pasien) sekaligus menjaga alur data janji temu dan pesanan tetap konsisten.',
-    role: 'Full-Stack Web Developer',
-    githubUrl: 'https://github.com/MochammadAldiansyah/periksa_id',
-    imageUrl: '/projects/periksa_id.png',
-    imageFit: 'cover',
-    featured: true,
-    metrics: [
-      { label: 'Domain Modul', value: 'Dokter · Obat · Forum' },
-      { label: 'Akses', value: 'Multi-Role RBAC' },
-      { label: 'Stack', value: 'Laravel Monolith' }
-    ]
-  },
-  {
-    id: 'journal',
-    title: 'Journal',
-    subtitle: 'Sistem Jurnal Mengajar & Absensi Guru',
-    category: 'fullstack',
-    summary: 'Aplikasi web untuk guru mengelola jurnal mengajar harian, mata pelajaran, kelas, dan absensi guru dalam satu dasbor terpusat.',
-    description: 'Journal menjawab kebutuhan administrasi pengajaran: guru mencatat jurnal mengajar per kelas dan mata pelajaran, sementara sistem melacak absensi guru. Struktur data dirancang relasional untuk memudahkan rekap.',
-    architecture: [
-      'Backend Laravel dengan controller terpisah (Journal, Teacher, Subject, Classroom, Confirmation)',
-      'Relasi domain: Teacher, Subject, Classroom, Journal, dan TeacherAbsence',
-      'Manajemen peran (RBAC) untuk admin, guru, dan pengelola akademik',
-      'Alur konfirmasi & rekap jurnal mengajar'
-    ],
-    stack: [
-      'Laravel',
-      'Blade',
-      'PHP',
-      'JavaScript',
-      'MySQL',
-      'RBAC (spatie/permission)'
-    ],
-    highlights: [
-      'Jurnal mengajar harian per kelas & mata pelajaran',
-      'Pencatatan absensi guru yang terintegrasi',
-      'Struktur data relasional untuk rekap akademik'
-    ],
-    challenges: 'Memodelkan relasi guru–mata pelajaran–kelas–jurnal agar pencatatan harian tetap fleksibel tetapi mudah direkap.',
-    role: 'Full-Stack Web Developer',
-    githubUrl: 'https://github.com/MochammadAldiansyah/journal',
-    imageUrl: '/projects/journal.png',
-    imageFit: 'cover',
-    featured: false,
-    metrics: [
-      { label: 'Modul', value: 'Jurnal & Absensi' },
-      { label: 'Entitas Inti', value: 'Guru · Kelas · Mapel' },
-      { label: 'Stack', value: 'Laravel Monolith' }
-    ]
-  },
-  {
-    id: 'pageturn',
-    title: 'PageTurn',
-    subtitle: 'Sistem Manajemen Perpustakaan Berbasis Web',
-    category: 'fullstack',
-    summary: 'Aplikasi manajemen perpustakaan modern untuk mendigitalkan peminjaman buku, mengelola katalog, dan memantau status pengembalian dengan hak akses Admin & User.',
-    description: 'PageTurn memusatkan seluruh operasional perpustakaan: anggota dapat melihat katalog dan meminjam buku secara online, sedangkan admin mengelola data buku, anggota, dan sirkulasi peminjaman.',
-    architecture: [
-      'Backend Laravel dengan Role-Based Access Control (RBAC): Admin & User',
-      'Dashboard admin berisi statistik buku, pengguna aktif, dan peminjaman berjalan',
-      'Modul manajemen buku (library management) dan manajemen anggota',
-      'Pelacakan status pengembalian & ketersediaan buku'
-    ],
-    stack: [
-      'Laravel',
-      'Blade',
-      'PHP',
-      'JavaScript',
-      'MySQL'
-    ],
-    highlights: [
-      'Dua peran jelas: Admin pengelola & User anggota',
-      'Katalog buku + peminjaman online',
-      'Dashboard statistik sirkulasi perpustakaan'
-    ],
-    challenges: 'Menjaga konsistensi status stok buku saat peminjaman dan pengembalian berlangsung bersamaan.',
-    role: 'Full-Stack Web Developer',
-    githubUrl: 'https://github.com/MochammadAldiansyah/PageTurn',
-    imageUrl: '/projects/pageturn.png',
-    imageFit: 'cover',
-    featured: false,
-    metrics: [
-      { label: 'Akses', value: 'Admin & User' },
-      { label: 'Fitur', value: 'Katalog & Peminjaman' },
-      { label: 'Stack', value: 'Laravel · Blade' }
-    ]
-  },
-  {
-    id: 'bioguard',
-    title: 'BioGuard',
-    subtitle: 'Platform Konservasi Digital Berbasis Artificial Intelligence',
-    category: 'fullstack',
-    summary: 'Platform untuk memantau, melindungi, dan mendata keanekaragaman hayati secara real-time dengan dukungan kecerdasan artifisial.',
-    description: 'BioGuard dibangun di atas Laravel 12 dan PHP 8.2+ sebagai platform konservasi digital. Tujuannya menjadi wadah terpusat untuk pendataan flora & fauna dan upaya perlindungan biodiversitas.',
-    architecture: [
-      'Backend Laravel 12 dengan PHP 8.2+',
-      'Pendekatan AI-powered untuk analisis & pendataan biodiversitas',
-      'Containerization (Docker) untuk lingkungan pengembangan yang konsisten',
-      'Skrip shell & setup otomatis untuk tooling proyek'
-    ],
-    stack: [
-      'Laravel 12',
-      'PHP 8.2+',
-      'Blade',
-      'JavaScript',
-      'Docker',
-      'AI'
-    ],
-    highlights: [
-      'Konsep konservasi biodiversitas dengan pendekatan AI',
-      'Dibangun di atas Laravel 12 (versi terbaru)',
-      'Lingkungan kontainer Docker untuk replikasi setup'
-    ],
-    challenges: 'Merancang fondasi platform konservasi yang skalabel sambil menyiapkan integrasi lapisan AI di atas Laravel modern.',
-    role: 'Full-Stack Web Developer',
-    githubUrl: 'https://github.com/MochammadAldiansyah/appBioGuard',
-    imageUrl: '/projects/bioguard.png',
-    imageFit: 'cover',
-    featured: false,
-    metrics: [
-      { label: 'Framework', value: 'Laravel 12' },
-      { label: 'Konsep', value: 'AI Conservation' },
-      { label: 'Infra', value: 'Docker' }
-    ]
-  },
-  {
     id: 'rpl-archive',
     title: 'RPL Archive',
     subtitle: 'Website Kelas 12 RPL Bergaya Neo-Brutalist',
@@ -378,46 +194,133 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/MochammadAldiansyah/rpl-archive',
     imageUrl: '/projects/rpl-archive.png',
     imageFit: 'cover',
-    featured: false,
+    featured: true,
     metrics: [
       { label: 'Framework', value: 'Vue 3 + Vite' },
       { label: 'Gaya', value: 'Neo-Brutalist' },
       { label: 'SEO', value: 'OG · JSON-LD · Sitemap' }
     ]
+  },
+  {
+    id: 'bioguard',
+    title: 'BioGuard',
+    subtitle: 'Platform Konservasi Digital Berbasis Artificial Intelligence',
+    category: 'fullstack',
+    summary: 'Platform untuk memantau, melindungi, dan mendata keanekaragaman hayati secara real-time dengan dukungan kecerdasan artifisial.',
+    description: 'BioGuard dibangun di atas Laravel 12 dan PHP 8.2+ sebagai platform konservasi digital. Tujuannya menjadi wadah terpusat untuk pendataan flora & fauna serta upaya perlindungan biodiversitas.',
+    architecture: [
+      'Backend Laravel 12 dengan PHP 8.2+',
+      'Pendekatan AI-powered untuk analisis & pendataan biodiversitas',
+      'Pemisahan bersih antara lapisan data, logika bisnis, dan antarmuka',
+      'Struktur proyek Laravel modern yang siap dikembangkan'
+    ],
+    stack: [
+      'Laravel 12',
+      'PHP 8.2+',
+      'Blade',
+      'JavaScript',
+      'MySQL',
+      'AI'
+    ],
+    highlights: [
+      'Konsep konservasi biodiversitas dengan pendekatan AI',
+      'Dibangun di atas Laravel 12 (versi terbaru)',
+      'Pendataan flora & fauna terpusat'
+    ],
+    challenges: 'Merancang fondasi platform konservasi yang skalabel sambil menyiapkan integrasi lapisan AI di atas Laravel modern.',
+    role: 'Full-Stack Web Developer',
+    githubUrl: 'https://github.com/MochammadAldiansyah/appBioGuard',
+    imageUrl: '/projects/bioguard.png',
+    imageFit: 'cover',
+    featured: true,
+    metrics: [
+      { label: 'Framework', value: 'Laravel 12' },
+      { label: 'Konsep', value: 'AI Conservation' },
+      { label: 'Stack', value: 'PHP · Blade' }
+    ]
   }
 ];
 
 export const experienceData: ExperienceItem[] = [
-  {
-    id: 'edu-placeholder',
-    period: '20XX - Sekarang',
-    role: 'S1 Teknik Informatika',
-    organization: 'Nama Universitas (isi sendiri)',
+    {
+    id: 'edu-sdn-sumorame',
+    period: '2014 - 2021',
+    role: 'Sekolah Dasar',
+    organization: 'SDN Sumorame Sidoarjo',
     badge: 'Pendidikan Formal',
     category: 'education',
     description:
-      'Menempuh studi sarjana Teknik Informatika dengan pendalaman fundamental ilmu komputer, struktur data, algoritma, rekayasa perangkat lunak, dan pengembangan web. (Silakan sesuaikan bagian ini di src/data/portfolioData.ts.)',
+      'Menempuh pendidikan dasar di SDN Sumorame Sidoarjo, membangun fondasi pembelajaran awal dan rasa ingin tahu terhadap teknologi.',
     highlights: [
-      'Fundamental Rekayasa Perangkat Lunak & Algoritma',
-      'Pengembangan Web Full-Stack',
-      'Basis Data & Pemodelan Data Relasional'
+      'Fondasi pendidikan dasar',
+      'Pengenalan awal teknologi'
     ],
-    tech: ['Algorithms', 'Software Engineering', 'Web Development', 'Database', 'System Design']
+    tech: ['Dasar Pembelajaran']
+  },
+   {
+    id: 'edu-smp-pgri',
+    period: '2021 - 2024',
+    role: 'Sekolah Menengah Pertama',
+    organization: 'SMP PGRI 10 Candi Sidoarjo',
+    badge: 'Pendidikan Formal',
+    category: 'education',
+    description:
+      'Menempuh pendidikan menengah pertama di SMP PGRI 10 Candi Sidoarjo sebagai fondasi dasar sebelum melanjutkan ke jenjang kejuruan Rekayasa Perangkat Lunak.',
+    highlights: [
+      'Fondasi akademik dasar',
+      'Awal ketertarikan pada teknologi & komputer'
+    ],
+    tech: ['Dasar Komputer', 'Teknologi Informasi']
   },
   {
-    id: 'exp-placeholder-1',
-    period: 'Isi periode',
-    role: 'Full-Stack Developer',
-    organization: 'Nama pengalaman / organisasi / proyek',
-    badge: 'Pengalaman',
+    id: 'edu-smk-antartika',
+    period: '2024 - Sekarang',
+    role: 'Rekayasa Perangkat Lunak (RPL)',
+    organization: 'SMK Antartika 1 Sidoarjo',
+    badge: 'Pendidikan Formal',
+    category: 'education',
+    description:
+      'Menempuh pendidikan kejuruan Rekayasa Perangkat Lunak dengan fokus pada pengembangan aplikasi web modern. Terbiasa membangun sistem backend menggunakan Laravel dan MySQL serta merancang antarmuka yang responsif dan interaktif.',
+    highlights: [
+      'Fokus Pengembangan Aplikasi Web Modern',
+      'Backend Laravel & Manajemen Database MySQL',
+      'Antarmuka responsif dengan React.js & Tailwind CSS'
+    ],
+    tech: ['Laravel', 'PHP', 'MySQL', 'React.js', 'JavaScript', 'Tailwind CSS']
+  },
+  {
+    id: 'project-bioguard',
+    period: '2026',
+    role: 'Full-Stack Web Developer',
+    organization: 'BioGuard — Platform Konservasi Digital Berbasis AI',
+    badge: 'Project',
     category: 'project',
     description:
-      'Deskripsi singkat pengalaman Anda — apa yang dikerjakan, teknologi yang dipakai, dan dampaknya. (Silakan sesuaikan bagian ini di src/data/portfolioData.ts.)',
+      'Platform konservasi digital inovatif yang memanfaatkan AI untuk memantau, melindungi, dan mendata keanekaragaman hayati secara real-time. Mengintegrasikan Computer Vision untuk identifikasi spesies dan analisis data lingkungan berbasis satelit.',
     highlights: [
-      'Poin pencapaian utama',
-      'Teknologi & tools yang digunakan',
-      'Peran dalam tim / hasil yang dicapai'
+      'Integrasi Computer Vision untuk Identifikasi Spesies',
+      'Analisis Data Lingkungan Berbasis Satelit',
+      'Deployment ke Platform Cloud',
+      'Solusi pemantauan lingkungan real-time yang lebih cepat & murah'
     ],
-    tech: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Tailwind CSS']
+    tech: ['Laravel', 'PHP', 'Artificial Intelligence', 'Computer Vision', 'MySQL', 'Cloud Deployment']
+  },
+  {
+    id: 'project-noekarta',
+    period: '2026',
+    role: 'Full-Stack Web Developer',
+    organization: 'Noekarta — Platform Interaktif Mengenal & Menjelajahi Jakarta',
+    badge: 'Project',
+    category: 'project',
+    description:
+      'Platform web interaktif yang mengajak pengunjung menyusuri sejarah Jakarta, mengenal budaya Betawi, menemukan kuliner khas, serta mengeksplorasi landmark kota lewat peta interaktif dan Street View.',
+    highlights: [
+      'Integrasi Peta Interaktif & Street View',
+      'Integrasi data berbasis JSON',
+      'Pengujian & deployment ke platform cloud',
+      'Live production di noekarta.id'
+    ],
+    tech: ['Laravel', 'PHP', 'JavaScript', 'MySQL', 'Tailwind CSS', 'Interactive Maps']
   }
+ 
 ];

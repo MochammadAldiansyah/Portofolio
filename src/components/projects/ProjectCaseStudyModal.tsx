@@ -7,8 +7,7 @@ import {
   CheckCircle2,
   AlertTriangle,
   Layers,
-  Code2,
-  Smartphone
+  Code2
 } from 'lucide-react';
 import type { Project } from '../../types/portfolio';
 import { ProjectPreviewPlaceholder } from './ProjectPreviewPlaceholder';
@@ -75,7 +74,7 @@ export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
             <div>
               <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
                 <span className="text-[10px] sm:text-xs font-mono font-black uppercase tracking-wider text-[#0f172a] bg-[#fde047] px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg border-2 border-[#0f172a]">
-                  {project.category === 'fullstack' ? 'FULL-STACK WEB ARCHITECTURE' : 'MOBILE FLUTTER SYSTEM'}
+                  FULL-STACK WEB ARCHITECTURE
                 </span>
                 <span className="text-[10px] sm:text-xs font-mono font-bold text-[#64748b]">
                   // {project.role}
@@ -103,7 +102,6 @@ export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
           {/* preview frame */}
           <ProjectPreviewPlaceholder
             project={project}
-            isMobileFrame={project.category === 'mobile'}
             className="aspect-[16/10] w-full max-h-[340px]"
           />
 
@@ -192,15 +190,7 @@ export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
           <div className="pt-6 border-t-2 border-[#0f172a]/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-3">
               {/* demo status */}
-              {project.isMobileApp ? (
-                <div
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#e0f2fe] text-[#0369a1] text-xs font-mono font-bold border-2 border-[#0284c7]/50 opacity-90 cursor-not-allowed"
-                  title={project.demoStatusLabel || 'Aplikasi Mobile Native'}
-                >
-                  <Smartphone className="w-4 h-4 text-[#0284c7]" />
-                  <span>Aplikasi Mobile Native (Demo/APK on request)</span>
-                </div>
-              ) : project.demoUrl ? (
+              {project.demoUrl ? (
                 <a
                   href={project.demoUrl}
                   target="_blank"

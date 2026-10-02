@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { Globe, Smartphone, Image as ImageIcon } from 'lucide-react';
+import { Globe, Image as ImageIcon } from 'lucide-react';
 import type { Project } from '../../types/portfolio';
 
 interface ProjectPreviewPlaceholderProps {
   project: Project;
   className?: string;
-  isMobileFrame?: boolean;
 }
 
 export const ProjectPreviewPlaceholder: React.FC<ProjectPreviewPlaceholderProps> = ({
   project,
-  className = '',
-  isMobileFrame = false
+  className = ''
 }) => {
   const [imageError, setImageError] = useState(false);
-  const isMobile = isMobileFrame || project.category === 'mobile';
 
   return (
     <div
@@ -27,13 +24,13 @@ export const ProjectPreviewPlaceholder: React.FC<ProjectPreviewPlaceholderProps>
           <span className="w-3 h-3 rounded-full bg-[#fde047] border border-[#0f172a]" />
           <span className="w-3 h-3 rounded-full bg-[#4ade80] border border-[#0f172a]" />
           <div className="ml-2 px-3 py-0.5 rounded-md bg-[#fffdf5] border border-[#0f172a]/50 text-[11px] font-mono font-bold text-[#0f172a] truncate max-w-[160px] sm:max-w-[240px]">
-            {isMobile ? `app://${project.id}.flutter` : `https://${project.id}.app`}
+            {`https://${project.id}.app`}
           </div>
         </div>
 
         <div className="flex items-center gap-1.5 text-[10px] font-mono font-black px-2.5 py-0.5 rounded-md bg-[#fde047] text-[#0f172a] border border-[#0f172a]">
-          {isMobile ? <Smartphone className="w-3 h-3" /> : <Globe className="w-3 h-3" />}
-          <span>{isMobile ? 'FLUTTER NATIVE' : 'WEB PLATFORM'}</span>
+          <Globe className="w-3 h-3" />
+          <span>WEB PLATFORM</span>
         </div>
       </div>
 
@@ -45,7 +42,7 @@ export const ProjectPreviewPlaceholder: React.FC<ProjectPreviewPlaceholderProps>
             alt={project.title}
             onError={() => setImageError(true)}
             className={`w-full h-full ${
-              project.imageFit === 'contain' || isMobile
+              project.imageFit === 'contain'
                 ? 'object-contain object-center p-3 sm:p-4'
                 : 'object-cover object-top'
             } transition-transform duration-500 group-hover/preview:scale-[1.02]`}

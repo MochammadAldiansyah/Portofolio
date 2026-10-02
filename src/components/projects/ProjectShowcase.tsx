@@ -35,10 +35,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onOpenProject 
     restDelta: 0.0005
   });
 
-  // gradual overlapping curtain wipe ranges
-  const ySlide2 = useTransform(smoothProgress, [0.22, 0.36], ['100%', '0%'], { clamp: true });
-  const ySlide3 = useTransform(smoothProgress, [0.47, 0.61], ['100%', '0%'], { clamp: true });
-  const ySlide4 = useTransform(smoothProgress, [0.72, 0.86], ['100%', '0%'], { clamp: true });
+  // gradual overlapping curtain wipe ranges (3 flagship slides + index overview)
+  const ySlide2 = useTransform(smoothProgress, [0.20, 0.34], ['100%', '0%'], { clamp: true });
+  const ySlide3 = useTransform(smoothProgress, [0.44, 0.58], ['100%', '0%'], { clamp: true });
+  const ySlideIndex = useTransform(smoothProgress, [0.68, 0.86], ['100%', '0%'], { clamp: true });
 
   return (
     <section
@@ -76,6 +76,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onOpenProject 
           <FlagshipSlideCard
             project={flagshipProjects[0]}
             index={0}
+            total={flagshipProjects.length}
             yMotion="0%"
             depthLevel={1}
             onSelectProject={handleSelect}
@@ -86,6 +87,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onOpenProject 
           <FlagshipSlideCard
             project={flagshipProjects[1]}
             index={1}
+            total={flagshipProjects.length}
             yMotion={ySlide2}
             depthLevel={2}
             onSelectProject={handleSelect}
@@ -96,6 +98,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onOpenProject 
           <FlagshipSlideCard
             project={flagshipProjects[2]}
             index={2}
+            total={flagshipProjects.length}
             yMotion={ySlide3}
             depthLevel={3}
             onSelectProject={handleSelect}
@@ -104,7 +107,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onOpenProject 
 
         {/* project index overview */}
         <motion.div
-          style={{ y: ySlide4, zIndex: 40 }}
+          style={{ y: ySlideIndex, zIndex: 40 }}
           className="absolute inset-0 w-full h-full bg-[#02587a] shadow-[0_-8px_24px_rgba(15,23,42,0.35)]"
         >
           <FilteredProjectDock

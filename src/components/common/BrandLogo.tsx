@@ -37,7 +37,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
             Mochammad Aldiansyah
           </span>
           <span className="text-[11px] text-[#fff9d4] font-mono font-medium flex items-center gap-1 drop-shadow-xs">
-            &gt;_ Full-Stack &amp; Mobile
+            &gt;_ Full-Stack Web
           </span>
         </div>
       )}

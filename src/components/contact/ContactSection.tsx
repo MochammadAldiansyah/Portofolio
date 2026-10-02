@@ -20,7 +20,7 @@ import { ContactOceanCanvas } from './ContactOceanCanvas';
 
 const inquiryTopics = [
   { id: 'web', label: 'Full-Stack Web', subject: 'Inquiry: Full-Stack Web Development' },
-  { id: 'mobile', label: 'Frontend (Vue)', subject: 'Inquiry: Vue Frontend Development' },
+  { id: 'frontend', label: 'Frontend (Vue)', subject: 'Inquiry: Vue Frontend Development' },
   { id: 'collab', label: 'Diskusi Santai', subject: 'Inquiry: Collaboration & Discussion' }
 ];
 
@@ -151,7 +151,7 @@ export const ContactSection: React.FC = () => {
                 Mari Berdiskusi &amp; Berkolaborasi
               </h2>
               <p className="text-xs sm:text-base text-[#475569] font-medium leading-relaxed max-w-2xl">
-                Punya ide proyek, kebutuhan rekayasa web/mobile, atau peluang kolaborasi? Hubungi saya langsung melalui email dan topik di bawah.
+                Punya ide proyek, kebutuhan rekayasa web, atau peluang kolaborasi? Hubungi saya langsung melalui email dan topik di bawah.
               </p>
             </div>
           </div>
@@ -316,7 +316,7 @@ export const ContactSection: React.FC = () => {
                       </span>
                     </div>
                     <p className="text-xs font-medium text-[#1e293b] leading-relaxed">
-                      Terima kasih sudah menjelajahi portofolio ini sampai tuntas! Selalu terbuka untuk ngobrol santai seputar web dev, mobile tech, atau kolaborasi proyek seru.
+                      Terima kasih sudah menjelajahi portofolio ini sampai tuntas! Selalu terbuka untuk ngobrol santai seputar web dev atau kolaborasi proyek seru.
                     </p>
                   </div>
 
@@ -349,7 +349,7 @@ export const ContactSection: React.FC = () => {
               <span className="hidden sm:inline text-[#64748b]">•</span>
             </div>
             <span className="text-[10px] sm:text-xs text-[#64748b] sm:text-[#0f172a] font-normal sm:font-bold">
-              Full-Stack &amp; Mobile Developer
+              Full-Stack Web Developer
             </span>
           </div>
 

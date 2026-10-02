@@ -6,7 +6,6 @@ import {
   SiTypescript,
   SiJavascript,
   SiTailwindcss,
-  SiFlutter,
   SiLaravel,
   SiPhp,
   SiVuedotjs,
@@ -15,11 +14,7 @@ import {
   SiPostgresql,
   SiSupabase,
   SiFirebase,
-  SiPrisma,
-  SiDocker,
-  SiLinux,
-  SiGit,
-  SiVercel
+  SiPrisma
 } from '@icons-pack/react-simple-icons';
 import type { TechItem, TechLayer } from '../../types/portfolio';
 import type { FlowDomainId } from './PipelineFlowPresets';
@@ -30,7 +25,6 @@ const iconMap: Record<string, React.FC<{ size?: number; color?: string; classNam
   typescript: SiTypescript,
   javascript: SiJavascript,
   tailwindcss: SiTailwindcss,
-  flutter: SiFlutter,
   laravel: SiLaravel,
   php: SiPhp,
   vuedotjs: SiVuedotjs,
@@ -39,11 +33,7 @@ const iconMap: Record<string, React.FC<{ size?: number; color?: string; classNam
   postgresql: SiPostgresql,
   supabase: SiSupabase,
   firebase: SiFirebase,
-  prisma: SiPrisma,
-  docker: SiDocker,
-  linux: SiLinux,
-  git: SiGit,
-  vercel: SiVercel
+  prisma: SiPrisma
 };
 
 interface PipelineNodeLayerProps {
@@ -77,9 +67,7 @@ export const PipelineNodeLayer: React.FC<PipelineNodeLayerProps> = ({
   const isLayerActiveInDomain =
     activeDomain === 'all' ||
     (activeDomain === 'web' && layerId === 'client') ||
-    (activeDomain === 'mobile' && layerId === 'client') ||
-    (activeDomain === 'backend' && (layerId === 'backend' || layerId === 'database')) ||
-    (activeDomain === 'devops' && layerId === 'devops');
+    (activeDomain === 'backend' && (layerId === 'backend' || layerId === 'database'));
 
   const handleInspectClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -172,9 +160,7 @@ export const PipelineNodeLayer: React.FC<PipelineNodeLayerProps> = ({
             const isToolActive =
               activeDomain === 'all' ||
               (activeDomain === 'web' && tech.category === 'frontend') ||
-              (activeDomain === 'mobile' && tech.category === 'mobile') ||
-              (activeDomain === 'backend' && tech.category === 'backend') ||
-              (activeDomain === 'devops' && tech.category === 'tools');
+              (activeDomain === 'backend' && tech.category === 'backend');
 
             const isToolSelected = isLayerActiveInDomain && selectedTech?.name === tech.name;
 

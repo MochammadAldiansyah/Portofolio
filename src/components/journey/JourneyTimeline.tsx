@@ -113,7 +113,7 @@ export const JourneyTimeline: React.FC = () => {
               Milestone
             </h2>
             <p className="text-xs sm:text-base font-medium text-[#475569] max-w-2xl leading-relaxed">
-              Pendidikan sarjana informatika, program bootcamp intensif, inisiatif mandiri, dan eksplorasi keamanan siber.
+              Jejak pendidikan dari sekolah dasar hingga SMK jurusan Rekayasa Perangkat Lunak, serta proyek pengembangan web yang dikerjakan.
             </p>
           </div>
         </motion.div>

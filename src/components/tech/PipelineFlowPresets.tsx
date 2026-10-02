@@ -1,7 +1,7 @@
 import React from 'react';
-import { Layers, Globe, Smartphone, Server, Terminal, Lock } from 'lucide-react';
+import { Layers, Globe, Server, Lock } from 'lucide-react';
 
-export type FlowDomainId = 'all' | 'web' | 'mobile' | 'backend' | 'devops' | 'cybersecurity';
+export type FlowDomainId = 'all' | 'web' | 'backend' | 'cybersecurity';
 
 interface PipelineFlowPresetsProps {
   activeDomain: FlowDomainId;
@@ -32,22 +32,10 @@ export const PipelineFlowPresets: React.FC<PipelineFlowPresetsProps> = ({
       tag: 'Web'
     },
     {
-      id: 'mobile',
-      label: 'Mobile App',
-      icon: Smartphone,
-      tag: 'Mobile'
-    },
-    {
       id: 'backend',
       label: 'Backend & DB',
       icon: Server,
       tag: 'Backend'
-    },
-    {
-      id: 'devops',
-      label: 'DevOps & Linux',
-      icon: Terminal,
-      tag: 'DevOps'
     },
     {
       id: 'cybersecurity',
@@ -70,7 +58,7 @@ export const PipelineFlowPresets: React.FC<PipelineFlowPresetsProps> = ({
       </div>
 
       {/* domain filter buttons */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
         {domains.map((domain) => {
           const Icon = domain.icon;
           const isActive = activeDomain === domain.id;

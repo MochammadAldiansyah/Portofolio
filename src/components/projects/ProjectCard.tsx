@@ -11,13 +11,11 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) => {
   const categoryLabels = {
     fullstack: 'Full-Stack Web',
-    mobile: 'Mobile Flutter App',
     ai: 'AI & Computer Vision'
   };
 
   const categoryAccents = {
     fullstack: 'text-[#2563eb] border-[#2563eb]/40',
-    mobile: 'text-[#0d9488] border-[#0d9488]/40',
     ai: 'text-[#d97706] border-[#d97706]/40'
   };
 

@@ -27,12 +27,12 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
       tags: ['Laravel', 'PHP', 'Eloquent ORM', 'MySQL', 'RBAC', 'REST APIs', 'Blade']
     },
     {
-      id: 'linux',
+      id: 'data',
       icon: <Terminal className="w-5 h-5 text-[#8c6239]" />,
-      title: 'Linux & DevOps Workflows',
-      subtitle: 'NixOS Daily Driver & Server Management',
-      desc: 'Menggunakan NixOS sebagai sistem operasi harian dengan konfigurasi deklaratif Flakes. Terbiasa dengan manajemen server Linux (Debian/Arch), containerisasi Docker, otomatisasi skrip Bash, dan workflow kolaborasi Git.',
-      tags: ['NixOS Flakes', 'Arch Linux', 'Debian Server', 'Docker', 'Git Branching', 'Bash CLI']
+      title: 'Database & Data Modeling',
+      subtitle: 'MySQL & Eloquent ORM',
+      desc: 'Merancang skema database relasional MySQL yang rapi, mengelola relasi antar tabel dengan Eloquent ORM, serta menulis query dan migrasi yang terstruktur untuk kebutuhan aplikasi.',
+      tags: ['MySQL', 'Eloquent ORM', 'Relational Design', 'Migrations', 'Query Optimization', 'Data Modeling']
     }
   ];
 
@@ -188,10 +188,10 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
           className="p-4 rounded-2xl bg-[#fffdf5] border border-[#e8dbc0] shadow-sm"
         >
           <span className="text-xs font-bold text-[#0f172a] block">
-            Linux Workflows
+            Database Design
           </span>
           <p className="text-[11px] text-[#64748b] mt-1 leading-relaxed">
-            Konfigurasi deklaratif NixOS, containerisasi Docker, dan efisiensi terminal.
+            Pemodelan data relasional MySQL, migrasi skema, dan query teroptimasi.
           </p>
         </motion.div>
       </div>

@@ -15,7 +15,6 @@ import {
   SiTypescript,
   SiJavascript,
   SiTailwindcss,
-  SiFlutter,
   SiLaravel,
   SiPhp,
   SiVuedotjs,
@@ -24,11 +23,7 @@ import {
   SiPostgresql,
   SiSupabase,
   SiFirebase,
-  SiPrisma,
-  SiDocker,
-  SiLinux,
-  SiGit,
-  SiVercel
+  SiPrisma
 } from '@icons-pack/react-simple-icons';
 import type { TechItem, TechLayer } from '../../types/portfolio';
 import { projectsData } from '../../data/portfolioData';
@@ -40,7 +35,6 @@ const iconMap: Record<string, React.FC<{ size?: number; color?: string; classNam
   typescript: SiTypescript,
   javascript: SiJavascript,
   tailwindcss: SiTailwindcss,
-  flutter: SiFlutter,
   laravel: SiLaravel,
   php: SiPhp,
   vuedotjs: SiVuedotjs,
@@ -49,11 +43,7 @@ const iconMap: Record<string, React.FC<{ size?: number; color?: string; classNam
   postgresql: SiPostgresql,
   supabase: SiSupabase,
   firebase: SiFirebase,
-  prisma: SiPrisma,
-  docker: SiDocker,
-  linux: SiLinux,
-  git: SiGit,
-  vercel: SiVercel
+  prisma: SiPrisma
 };
 
 interface PipelineInspectorProps {
@@ -76,51 +66,39 @@ const layerDetailsMap: Record<
 > = {
   client: {
     title: 'Frontend & Web Client',
-    subtitle: 'Web & Mobile',
+    subtitle: 'Web Interface',
     description:
-      'Pengembangan antarmuka web dan mobile menggunakan React, TypeScript, dan Flutter dengan fokus pada interaktivitas dan performa yang responsif.',
+      'Pengembangan antarmuka web modern menggunakan Vue 3, JavaScript, dan Tailwind CSS dengan fokus pada interaktivitas dan performa yang responsif.',
     guarantees: [
-      'Type-safe props & contracts',
-      'Aplikasi Android & iOS',
-      'Desain responsif modern'
+      'Komponen reaktif & reusable',
+      'Desain responsif modern',
+      'Interaksi dinamis di sisi klien'
     ],
-    role: 'Frontend & Mobile'
+    role: 'Frontend & Web'
   },
   backend: {
     title: 'Backend & Server',
     subtitle: 'Server & API',
     description:
-      'Pengembangan arsitektur backend menggunakan Laravel dan Node.js untuk menangani REST API, routing, dan komunikasi data real-time.',
+      'Pengembangan arsitektur backend menggunakan Laravel dan PHP untuk menangani REST API, routing, autentikasi, dan manajemen peran.',
     guarantees: [
       'Penanganan transaksi database',
-      'Komunikasi WebSockets',
-      'Otentikasi aman & API tokens'
+      'Otentikasi aman & manajemen peran',
+      'Arsitektur MVC yang rapi'
     ],
     role: 'Backend Engineering'
   },
   database: {
     title: 'Database & Penyimpanan',
-    subtitle: 'Relational & NoSQL',
+    subtitle: 'Relational',
     description:
-      'Pengelolaan basis data relasional PostgreSQL & MySQL, serta database cloud Firestore dan Supabase dengan sinkronisasi real-time.',
+      'Pengelolaan basis data relasional MySQL dengan pemodelan data yang rapi, migrasi skema, dan query yang teroptimasi melalui Eloquent ORM.',
     guarantees: [
-      'Migrasi skema via Prisma',
-      'Sinkronisasi real-time NoSQL',
+      'Pemodelan data relasional',
+      'Migrasi skema terstruktur',
       'Query terindeks dan teroptimasi'
     ],
     role: 'Database & Storage'
-  },
-  devops: {
-    title: 'DevOps & Lingkungan Kerja',
-    subtitle: 'Linux & Deployment',
-    description:
-      'Alur kerja pengembangan berbasis sistem operasi Linux, isolasi aplikasi dengan Docker, manajemen kode dengan Git, dan hosting edge Vercel.',
-    guarantees: [
-      'Lingkungan kontainer Docker',
-      'Branching & version control Git',
-      'Automasi terminal Unix'
-    ],
-    role: 'DevOps & Tools'
   }
 };
 
@@ -177,7 +155,7 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
             Fokus Eksplorasi
           </div>
           <p className="text-sm sm:text-base text-[#1e293b] font-medium leading-relaxed bg-[#fff9d4]/60 p-4 rounded-2xl border border-[#0f172a]/20">
-            Bidang keamanan siber yang sedang dipersiapkan mencakup Web Application Security (OWASP Top 10), Network Traffic Analysis, Capture The Flag (CTF), dan Linux System Security.
+            Bidang keamanan siber yang sedang dipersiapkan mencakup Web Application Security (OWASP Top 10), Network Traffic Analysis, dan Capture The Flag (CTF).
           </p>
         </div>
 
@@ -211,10 +189,10 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
             <div className="p-4 rounded-2xl bg-[#fff9d4] border-2 border-[#0f172a] shadow-[3px_3px_0px_#0f172a] space-y-1">
               <div className="flex items-center gap-2 text-xs font-mono font-black text-[#0f172a]">
                 <Activity className="w-4 h-4 text-[#16a34a]" />
-                <span>Linux Security</span>
+                <span>Security Reporting</span>
               </div>
               <p className="text-xs text-[#475569] font-medium">
-                Hardening izin sistem, manajemen SSH, dan isolasi proses.
+                Dokumentasi temuan, penilaian risiko, dan rekomendasi mitigasi.
               </p>
             </div>
           </div>
@@ -307,7 +285,7 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
               >
                 <div>
                   <div className="flex items-center justify-between text-[10px] font-mono font-bold text-[#64748b] uppercase pb-1">
-                    <span>{proj.category === 'fullstack' ? 'Web System' : 'Mobile App'}</span>
+                    <span>Web System</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-[#0f172a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
 

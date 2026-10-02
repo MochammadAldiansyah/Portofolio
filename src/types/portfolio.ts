@@ -1,10 +1,10 @@
-export type ProjectCategory = 'all' | 'fullstack' | 'mobile';
+export type ProjectCategory = 'all' | 'fullstack';
 
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'fullstack' | 'mobile';
+  category: 'fullstack';
   summary: string;
   description: string;
   architecture: string[];
@@ -16,19 +16,17 @@ export interface Project {
   githubUrl?: string;
   isPrivateRepo?: boolean;
   privateRepoReason?: string;
-  isMobileApp?: boolean;
-  demoStatusLabel?: string;
   imageUrl: string;
   imageFit?: 'cover' | 'contain';
   featured: boolean;
   metrics: { label: string; value: string }[];
 }
 
-export type TechLayer = 'client' | 'backend' | 'database' | 'devops';
+export type TechLayer = 'client' | 'backend' | 'database';
 
 export interface TechItem {
   name: string;
-  category: 'frontend' | 'mobile' | 'backend' | 'tools';
+  category: 'frontend' | 'backend' | 'tools';
   layer: TechLayer;
   iconKey: string;
   color: string;
