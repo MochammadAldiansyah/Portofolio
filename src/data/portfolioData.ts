@@ -229,8 +229,9 @@ export const projectsData: Project[] = [
     ],
     challenges: 'Merancang fondasi platform konservasi yang skalabel sambil menyiapkan integrasi lapisan AI di atas Laravel modern.',
     role: 'Full-Stack Web Developer',
+    demoUrl: 'https://dinacom-app-707456965645.asia-southeast2.run.app/',
     githubUrl: 'https://github.com/MochammadAldiansyah/appBioGuard',
-    imageUrl: '/projects/bioguard.png',
+    imageUrl: '/projects/bioguard.webp',
     imageFit: 'cover',
     featured: true,
     metrics: [
