@@ -40,6 +40,8 @@ export const ProjectPreviewPlaceholder: React.FC<ProjectPreviewPlaceholderProps>
           <img
             src={project.imageUrl}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             onError={() => setImageError(true)}
             className={`w-full h-full ${
               project.imageFit === 'contain'

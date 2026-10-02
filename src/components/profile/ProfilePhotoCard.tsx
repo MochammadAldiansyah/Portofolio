@@ -40,12 +40,14 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
       >
         <div className="relative aspect-[3/4] w-full rounded-[24px] overflow-hidden bg-[#faeed1] border border-[#e2d3b3] flex items-center justify-center">
           <img
-            src={profileData.avatarUrl || '/aldi.jpeg'}
+            src={profileData.avatarUrl || '/aldi.webp'}
             alt={profileData.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = '/aldi.jpeg';
+              target.src = '/aldi.webp';
             }}
           />
 

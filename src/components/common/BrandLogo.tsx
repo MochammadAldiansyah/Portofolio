@@ -12,10 +12,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   withText = false
 }) => {
   const sizeMap = {
-    sm: { img: 'w-8 h-8', text: 'text-xs' },
-    md: { img: 'w-10 h-10', text: 'text-sm' },
-    lg: { img: 'w-14 h-14', text: 'text-base' },
-    xl: { img: 'w-24 h-24', text: 'text-lg' }
+    sm: { img: 'w-8 h-8', text: 'text-xs', px: 32 },
+    md: { img: 'w-10 h-10', text: 'text-sm', px: 40 },
+    lg: { img: 'w-14 h-14', text: 'text-base', px: 56 },
+    xl: { img: 'w-24 h-24', text: 'text-lg', px: 96 }
   };
 
   const currentSize = sizeMap[size];
@@ -24,10 +24,13 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div className={`inline-flex items-center gap-2.5 ${className}`}>
       <div className="relative flex items-center justify-center transition-transform group-hover:scale-105 select-none">
         <img
-          src="/aldiansyah.png"
+          src="/aldiansyah.webp"
           alt="Mochammad Aldiansyah Logo"
+          width={currentSize.px}
+          height={currentSize.px}
           className={`${currentSize.img} object-contain drop-shadow-md`}
           loading="eager"
+          decoding="async"
         />
       </div>
 

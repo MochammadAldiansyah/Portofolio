@@ -7,7 +7,7 @@ export const profileData: ProfileData = {
   status: 'Available for Engineering Roles & Projects',
   bio: 'Siswa Rekayasa Perangkat Lunak (RPL) di SMK Antartika 1 Sidoarjo dengan fokus pada pengembangan aplikasi web modern. Terbiasa membangun sistem backend dengan Laravel dan MySQL serta merancang antarmuka responsif dan interaktif.',
   experienceStart: 'Active Developer',
-  avatarUrl: '/aldi.jpeg',
+  avatarUrl: '/aldi.webp',
   interests: [
     'Web Architecture',
     'Backend Development',
@@ -152,7 +152,7 @@ export const projectsData: Project[] = [
     role: 'Full-Stack Web Developer',
     demoUrl: 'https://www.noekarta.id/',
     githubUrl: 'https://github.com/MochammadAldiansyah/Noekarta',
-    imageUrl: '/projects/noekarta.png',
+    imageUrl: '/projects/noekarta.webp',
     imageFit: 'cover',
     featured: true,
     metrics: [
@@ -192,7 +192,7 @@ export const projectsData: Project[] = [
     role: 'Frontend Developer',
     demoUrl: 'https://orang-orangan-erpeel.vercel.app',
     githubUrl: 'https://github.com/MochammadAldiansyah/rpl-archive',
-    imageUrl: '/projects/rpl-archive.png',
+    imageUrl: '/projects/rpl-archive.webp',
     imageFit: 'cover',
     featured: true,
     metrics: [
