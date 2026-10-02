@@ -40,12 +40,12 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
       >
         <div className="relative aspect-[3/4] w-full rounded-[24px] overflow-hidden bg-[#faeed1] border border-[#e2d3b3] flex items-center justify-center">
           <img
-            src={profileData.avatarUrl || '/avatar.svg'}
+            src={profileData.avatarUrl || '/aldi.jpeg'}
             alt={profileData.name}
             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = '/avatar.svg';
+              target.src = '/aldi.jpeg';
             }}
           />
 
@@ -76,7 +76,7 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
           <MapPin className="w-4 h-4 text-[#8c6239]" />
           <span>Indonesia</span>
         </div>
-        <span className="text-[#0284c7] font-bold">Linux Enthusiasts</span>
+        <span className="text-[#0284c7] font-bold">Fullstack Developer</span>
       </motion.div>
     </motion.div>
   );

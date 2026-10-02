@@ -3,11 +3,11 @@ import type { ProfileData, Project, TechItem, ExperienceItem } from '../types/po
 export const profileData: ProfileData = {
   name: 'Mochammad Aldiansyah',
   tagline: 'Full-Stack & Mobile Developer',
-  education: 'Teknik Informatika (S1) • Universitas Widyatama',
+  education: 'Rekayasa Perangkat Lunak (RPL) - SMK Antartika 1 Sidoarjo',
   status: 'Available for Engineering Roles & Projects',
   bio: 'Informatics engineering undergraduate focused on building end-to-end web platforms and mobile applications with resilient architecture, clean code, and Linux-driven workflows.',
   experienceStart: 'Active Developer',
-  avatarUrl: '/avatar.svg',
+  avatarUrl: '/aldi.jpeg',
   interests: [
     'Web Architecture',
     'Mobile Systems',
